@@ -66,7 +66,7 @@ if (file_exists($filePath)) {
                 <span><?= htmlspecialchars($customTitle) ?></span>
             </div>
 
-            <article>
+            <article class="markdown-content">
                 <?= $htmlContent ?>
             </article>
             <div class="article-next-card">
