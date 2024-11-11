@@ -19,9 +19,19 @@ include 'list_articles.php';
 
 <body>
     <nav>
-        <a class="m-0" href="landing.php">
-            <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
-        </a>
+        <div class="nav-search">
+            <a class="m-0" href="landing.php">
+                <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
+            </a>
+            <div class="search-container">
+                <span class="material-symbols-rounded search-icon">search</span>
+                <input type="text" id="search-bar" placeholder="Buscar artículos..." oninput="searchArticles()">
+                <ul id="article-list">
+                    <!-- Aquí se mostrarán los artículos que inician con el prompt de busqueda -->
+                </ul>
+            </div>
+        </div>
+
         <div class="nav-links">
             <a href="landing.php">Temas</a>
             <a href="article.php?article=welcome">Recursos</a>
@@ -41,25 +51,22 @@ include 'list_articles.php';
             </p>
         </header>
         <div class="articles-list">
-            <input type="text" id="search-bar" placeholder="Buscar artículos..." oninput="searchArticles()">
-            <ul id="article-list">
-                <!-- Aquí se mostrarán los artículos disponibles -->
-            </ul>
             <div class="articles">
-                <!-- Esta lista, quiero que solo se muestren articulos en la carpeta de articles, con su title y description -->
+                <!-- En esta lista se presentan los articulos disponibles en el sitio, ubicados en la carpeta 'articles' -->
                 <?php foreach ($articles as $article): ?>
-            <a href="article.php?article=<?php echo htmlspecialchars($article['filename']); ?>" class="m-0 td-none">
-                <div class="article-card">
-                    <div class="article-icon-box">
-                        <span class="material-symbols-rounded">storage</span>
-                    </div>
-                    <div class="article-info">
-                        <h3><?php echo htmlspecialchars($article['title']); ?></h3>
-                        <p><?php echo htmlspecialchars($article['description']); ?></p>
-                    </div>
-                </div>
-            </a>
-        <?php endforeach; ?>
+                    <a href="article.php?article=<?php echo htmlspecialchars($article['filename']); ?>" class="m-0 td-none">
+                        <div class="article-card">
+                            <div class="article-icon-box">
+                                <span
+                                    class="material-symbols-rounded"><?php echo htmlspecialchars(string: $article['icon']); ?></span>
+                            </div>
+                            <div class="article-info">
+                                <h3><?php echo htmlspecialchars($article['title']); ?></h3>
+                                <p><?php echo htmlspecialchars($article['description']); ?></p>
+                            </div>
+                        </div>
+                    </a>
+                <?php endforeach; ?>
             </div>
         </div>
     </div>
@@ -70,22 +77,18 @@ include 'list_articles.php';
             </a>
             <p>&copy; <?= date('Y') ?> Todos los derechos reservados</p>
         </div>
-        <div class="nav-links">
-            <a href="landing.php">Temas</a>
-            <a href="article.php?article=welcome">Recursos</a>
-            <a href="article.php?article=welcome">Nosotros</a>
-        </div>
     </footer>
-
     <script>
         async function searchArticles() {
             const query = document.getElementById('search-bar').value.toLowerCase();
+            const searchBar = document.getElementById('search-bar');
             const articleList = document.getElementById('article-list');
 
-            // Si la barra de búsqueda está vacía, limpia la lista, oculta el contenedor y detén la función
             if (!query) {
                 articleList.innerHTML = '';
-                articleList.style.opacity = 0; // Set opacity to 0 when no results
+                articleList.style.display = 'none';
+                searchBar.classList.remove('expanded');
+                articleList.classList.remove('expanded-list');
                 return;
             }
 
@@ -95,22 +98,27 @@ include 'list_articles.php';
             articleList.innerHTML = ''; // Limpia resultados previos
 
             if (articles.length > 0) {
-                articleList.style.opacity = 1; // Fade in when there are articles
+                articleList.style.display = 'block';
+                searchBar.classList.add('expanded');
+                articleList.classList.add('expanded-list');
+
                 articles.forEach(article => {
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `
                 <a href="article.php?article=${article.filename}">
-                    <strong>${article.title}</strong><br>
-                    <span>${article.description}</span>
+                    <div class="article-search-box">
+                        <p>${article.title}</p><br>
+                    </div>
                 </a>
             `;
                     articleList.appendChild(listItem);
                 });
             } else {
-                articleList.style.opacity = 0; // Fade out if no articles are found
+                articleList.style.display = 'none';
+                searchBar.classList.remove('expanded');
+                articleList.classList.remove('expanded-list');
             }
         }
     </script>
 </body>
-
 </html>

@@ -1,6 +1,7 @@
 ---
 title: Gestión de Memoria
 description: Conoce acerca del proceso de gestión de memoria en sistemas operativos.
+icon: storage
 ---
 
 # Gestión de Memoria

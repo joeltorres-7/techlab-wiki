@@ -1,17 +1,18 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
-    background-color: #FCFCFC;
+    background-color: #FBFBFE;
     font-family: "Inter", sans-serif;
-    height:100%;
+    height: 100%;
 }
 
 .material-symbols-rounded {
     font-variation-settings:
-    'FILL' 1,
-    'wght' 400,
-    'GRAD' 0,
-    'opsz' 24
+        'FILL' 1,
+        'wght' 400,
+        'GRAD' 0,
+        'opsz' 24
 }
 
 // Universal Styles
@@ -92,12 +93,13 @@ html, body {
         border: 1px solid #E5E5E5;
 
         span {
-            color: black;
+            color: #050315;
             font-size: 24px;
         }
     }
 
-    h3, p {
+    h3,
+    p {
         margin: 0px;
         padding: 0px;
     }
@@ -116,14 +118,40 @@ html, body {
     }
 }
 
-nav, footer {
+nav,
+footer {
     flex: 1 0 100%;
     display: flex;
     justify-content: space-between;
-    padding: 24px;
+    align-items: center;
+    padding: 32px 48px;
 
     .nav-logo {
         height: 20px;
+    }
+
+    .nav-search {
+        width: 30vw;
+        display: flex;
+        align-items: center;
+
+        .search-container {
+            width: 100%;
+            position: relative;
+            display: inline-flex;
+            align-items: center;
+        }
+        
+        .search-icon {
+            position: absolute;
+            left: 14px;
+            color: #666;
+            font-size: 20px;
+        }        
+
+        .nav-logo {
+            margin-right: 24px;
+        }
     }
 
     .nav-links {
@@ -132,14 +160,17 @@ nav, footer {
         a {
             font-size: 16px;
             font-weight: 500;
-            color: black;
+            color: #050315;
             text-decoration: none;
             cursor: pointer;
-            margin-right: 32px;
+            margin-right: 0px;
             transition-duration: 300ms;
+            padding: 8px 16px;
+            box-sizing: border-box;
+            border-bottom: 3px solid transparent;
 
             &:hover {
-                color: #0A21C0;
+                border-bottom-color: #2F27CE;
             }
 
             &:last-child {
@@ -167,7 +198,8 @@ footer {
         color: #C4C5C6;
     }
 
-    .nav-links a, p {
+    .nav-links a,
+    p {
         color: #E5E5E5;
         font-size: 16px;
     }
@@ -178,12 +210,13 @@ footer {
         transition-duration: 300ms;
 
         &:hover {
-            color: #0A21C0;
+            color: #2F27CE;
         }
     }
 }
 
-header, main {
+header,
+main {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -252,12 +285,13 @@ article {
         margin-right: 16px;
 
         span {
-            color: black;
+            color: #050315;
             font-size: 24px;
         }
     }
 
-    h3, p {
+    h3,
+    p {
         margin: 0px;
         padding: 0px;
     }
@@ -292,11 +326,11 @@ article {
         transition-duration: 300ms;
 
         &:hover {
-            color: #0A21C0;
+            color: #2F27CE;
         }
 
         &:last-child {
-            color: black;
+            color: #050315;
         }
     }
 
@@ -316,13 +350,27 @@ article {
 #search-bar {
     width: 100%;
     font-size: 16px;
-    padding: 8px 16px;
-    margin-bottom: 16px;
+    padding: 10px 16px;
+    padding-left: 40px;
+    margin-bottom: 0;
     border: 1px solid #C4C5C6;
     border-radius: 32px;
-    -webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
-    -moz-box-sizing: border-box;    /* Firefox, other Gecko */
-    box-sizing: border-box; 
+    -webkit-box-sizing: border-box;
+    /* Safari/Chrome, other WebKit */
+    -moz-box-sizing: border-box;
+    /* Firefox, other Gecko */
+    box-sizing: border-box;
+    transition-duration: 200ms;
+
+    &:active,
+    &:focus {
+        outline: none;
+        box-shadow: rgba(12, 12, 46, 0.10) 0px 48px 100px 0px;
+    }
+
+    &.expanded {
+        border-radius: 16px 16px 0 0;
+    }
 }
 
 .articles-list {
@@ -330,39 +378,86 @@ article {
 }
 
 #article-list {
-    background-color: #FFF;
+    background-color: #FBFBFE;
+    width: 100%;
+    border: 1px solid #C4C5C6;
     border-radius: 16px;
     box-sizing: border-box;
-    padding: 8px;
+    padding: 8px 0px;
     position: absolute;
-    top: 48px;
+    top: 40px;
     list-style: none;
     margin: 0;
-    box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-    opacity: 0;
-    transition: opacity 200ms ease;
+    box-shadow: rgba(17, 12, 46, 0.05) 0px 48px 100px 0px;
+    display: none;
+
+    &.expanded-list {
+        border-radius: 0px 0px 16px 16px;
+        border-top: 0px;
+    }
 }
 
 #article-list li {
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 8px;
-    background-color: #F3F3F3;
-    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #FBFBFE;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F3F3F3;
+    }
 
     &:last-child {
-        margin-bottom: 0;
+        border-radius: 0 0 8px 8px;
     }
 }
 
 #article-list a {
-    color: #333;
+    color: #141619;
     text-decoration: none;
 }
 
-#article-list a:hover {
+#article-list a .article-search-box {
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
+
+    p {
+        font-size: 14px;
+        color: #141619;
+    }
+}
+
+// Markdown styles
+
+.markdown-content {
+    font-family: "Inter", sans-serif;
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    border-radius: 8px;
+    max-width: 800px;
+}
+
+.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+    color: #2c3e50;
+    margin-top: 1.4em;
+    margin-bottom: 0.5em;
+}
+
+.markdown-content h2 {
+    margin-top: 0.5em;
+}
+
+.markdown-content p {
+    margin-bottom: 1em;
+}
+
+.markdown-content a {
+    color: #3498db;
     text-decoration: underline;
 }
 
-// Footer
-
+.markdown-content ul, .markdown-content ol {
+    padding-left: 1.5em;
+    margin-bottom: 1em;
+}
