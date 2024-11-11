@@ -19,9 +19,19 @@ include 'list_articles.php';
 
 <body>
     <nav>
-        <a class="m-0" href="landing.php">
-            <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
-        </a>
+        <div class="nav-search">
+            <a class="m-0" href="landing.php">
+                <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
+            </a>
+            <div class="search-container">
+                <span class="material-symbols-rounded search-icon">search</span>
+                <input type="text" id="search-bar" placeholder="Buscar artículos..." oninput="searchArticles()">
+                <ul id="article-list">
+                    <!-- Aquí se mostrarán los artículos que inician con el prompt de busqueda -->
+                </ul>
+            </div>
+        </div>
+
         <div class="nav-links">
             <a href="landing.php">Temas</a>
             <a href="article.php?article=welcome">Recursos</a>
@@ -41,17 +51,14 @@ include 'list_articles.php';
             </p>
         </header>
         <div class="articles-list">
-            <input type="text" id="search-bar" placeholder="Buscar artículos..." oninput="searchArticles()">
-            <ul id="article-list">
-                <!-- Aquí se mostrarán los artículos que inician con el prompt de busqueda -->
-            </ul>
             <div class="articles">
                 <!-- En esta lista se presentan los articulos disponibles en el sitio, ubicados en la carpeta 'articles' -->
                 <?php foreach ($articles as $article): ?>
                     <a href="article.php?article=<?php echo htmlspecialchars($article['filename']); ?>" class="m-0 td-none">
                         <div class="article-card">
                             <div class="article-icon-box">
-                                <span class="material-symbols-rounded"><?php echo htmlspecialchars(string: $article['icon']); ?></span>
+                                <span
+                                    class="material-symbols-rounded"><?php echo htmlspecialchars(string: $article['icon']); ?></span>
                             </div>
                             <div class="article-info">
                                 <h3><?php echo htmlspecialchars($article['title']); ?></h3>
@@ -76,7 +83,6 @@ include 'list_articles.php';
             <a href="article.php?article=welcome">Nosotros</a>
         </div>
     </footer>
-
     <script>
         async function searchArticles() {
             const query = document.getElementById('search-bar').value.toLowerCase();
@@ -120,5 +126,4 @@ include 'list_articles.php';
         }
     </script>
 </body>
-
 </html>

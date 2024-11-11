@@ -49,9 +49,19 @@ if (file_exists($filePath)) {
 
 <body>
     <nav>
-        <a class="m-0" href="landing.php">
-            <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
-        </a>
+        <div class="nav-search">
+            <a class="m-0" href="landing.php">
+                <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
+            </a>
+            <div class="search-container">
+                <span class="material-symbols-rounded search-icon">search</span>
+                <input type="text" id="search-bar" placeholder="Buscar artículos..." oninput="searchArticles()">
+                <ul id="article-list">
+                    <!-- Aquí se mostrarán los artículos que inician con el prompt de busqueda -->
+                </ul>
+            </div>
+        </div>
+
         <div class="nav-links">
             <a href="landing.php">Temas</a>
             <a href="article.php?article=welcome">Recursos</a>
@@ -123,6 +133,47 @@ if (file_exists($filePath)) {
             <a href="article.php?article=welcome">Nosotros</a>
         </div>
     </footer>
-</body>
+    <script>
+        async function searchArticles() {
+            const query = document.getElementById('search-bar').value.toLowerCase();
+            const searchBar = document.getElementById('search-bar');
+            const articleList = document.getElementById('article-list');
 
+            if (!query) {
+                articleList.innerHTML = '';
+                articleList.style.display = 'none';
+                searchBar.classList.remove('expanded');
+                articleList.classList.remove('expanded-list');
+                return;
+            }
+
+            const response = await fetch('search.php?query=' + encodeURIComponent(query));
+            const articles = await response.json();
+
+            articleList.innerHTML = ''; // Limpia resultados previos
+
+            if (articles.length > 0) {
+                articleList.style.display = 'block';
+                searchBar.classList.add('expanded');
+                articleList.classList.add('expanded-list');
+
+                articles.forEach(article => {
+                    const listItem = document.createElement('li');
+                    listItem.innerHTML = `
+                <a href="article.php?article=${article.filename}">
+                    <div class="article-search-box">
+                        <p>${article.title}</p><br>
+                    </div>
+                </a>
+            `;
+                    articleList.appendChild(listItem);
+                });
+            } else {
+                articleList.style.display = 'none';
+                searchBar.classList.remove('expanded');
+                articleList.classList.remove('expanded-list');
+            }
+        }
+    </script>
+</body>
 </html>
