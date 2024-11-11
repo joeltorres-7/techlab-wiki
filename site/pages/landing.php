@@ -51,7 +51,7 @@ include 'list_articles.php';
                     <a href="article.php?article=<?php echo htmlspecialchars($article['filename']); ?>" class="m-0 td-none">
                         <div class="article-card">
                             <div class="article-icon-box">
-                                <span class="material-symbols-rounded">storage</span>
+                                <span class="material-symbols-rounded"><?php echo htmlspecialchars(string: $article['icon']); ?></span>
                             </div>
                             <div class="article-info">
                                 <h3><?php echo htmlspecialchars($article['title']); ?></h3>
