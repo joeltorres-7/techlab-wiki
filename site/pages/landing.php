@@ -77,11 +77,6 @@ include 'list_articles.php';
             </a>
             <p>&copy; <?= date('Y') ?> Todos los derechos reservados</p>
         </div>
-        <div class="nav-links">
-            <a href="landing.php">Temas</a>
-            <a href="article.php?article=welcome">Recursos</a>
-            <a href="article.php?article=welcome">Nosotros</a>
-        </div>
     </footer>
     <script>
         async function searchArticles() {

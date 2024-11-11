@@ -2,7 +2,7 @@ html,
 body {
   margin: 0;
   padding: 0;
-  background-color: #FCFCFC;
+  background-color: #FBFBFE;
   font-family: "Inter", sans-serif;
   height: 100%;
 }
@@ -79,7 +79,7 @@ body {
   border: 1px solid #E5E5E5;
 }
 .article-next-card .article-button span {
-  color: black;
+  color: #050315;
   font-size: 24px;
 }
 .article-next-card h3,
@@ -143,15 +143,18 @@ nav .nav-links a,
 footer .nav-links a {
   font-size: 16px;
   font-weight: 500;
-  color: black;
+  color: #050315;
   text-decoration: none;
   cursor: pointer;
-  margin-right: 32px;
+  margin-right: 0px;
   transition-duration: 300ms;
+  padding: 8px 16px;
+  box-sizing: border-box;
+  border-bottom: 3px solid transparent;
 }
 nav .nav-links a:hover,
 footer .nav-links a:hover {
-  color: #0A21C0;
+  border-bottom-color: #2F27CE;
 }
 nav .nav-links a:last-child,
 footer .nav-links a:last-child {
@@ -185,7 +188,7 @@ footer .nav-links a {
   transition-duration: 300ms;
 }
 footer .nav-links a:hover {
-  color: #0A21C0;
+  color: #2F27CE;
 }
 
 header,
@@ -252,7 +255,7 @@ article {
   margin-right: 16px;
 }
 .article-card .article-icon-box span {
-  color: black;
+  color: #050315;
   font-size: 24px;
 }
 .article-card h3,
@@ -286,10 +289,10 @@ article {
   transition-duration: 300ms;
 }
 .breadcrumbs a:hover {
-  color: #0A21C0;
+  color: #2F27CE;
 }
 .breadcrumbs a:last-child {
-  color: black;
+  color: #050315;
 }
 .breadcrumbs span {
   font-size: 16px;
@@ -326,7 +329,7 @@ article {
 }
 
 #article-list {
-  background-color: #FFF;
+  background-color: #FBFBFE;
   width: 100%;
   border: 1px solid #C4C5C6;
   border-radius: 16px;
@@ -346,7 +349,7 @@ article {
 
 #article-list li {
   box-sizing: border-box;
-  background-color: #FFF;
+  background-color: #FBFBFE;
   cursor: pointer;
 }
 #article-list li:hover {
