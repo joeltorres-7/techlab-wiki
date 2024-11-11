@@ -289,7 +289,7 @@ article {
 }
 #search-bar:active, #search-bar:focus {
   outline: none;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+  box-shadow: rgba(12, 12, 46, 0.1) 0px 48px 100px 0px;
 }
 #search-bar.expanded {
   border-radius: 16px 16px 0 0;
@@ -305,14 +305,13 @@ article {
   border: 1px solid #C4C5C6;
   border-radius: 16px;
   box-sizing: border-box;
-  padding: 8px;
+  padding: 8px 0px;
   position: absolute;
   top: 48px;
   list-style: none;
   margin: 0;
   box-shadow: rgba(17, 12, 46, 0.05) 0px 48px 100px 0px;
-  opacity: 0;
-  transition: opacity 200ms ease;
+  display: none;
 }
 #article-list.expanded-list {
   top: 48px;
@@ -321,21 +320,28 @@ article {
 }
 
 #article-list li {
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 8px;
+  box-sizing: border-box;
+  background-color: #FFF;
+  cursor: pointer;
+}
+#article-list li:hover {
   background-color: #F3F3F3;
-  border: 1px solid #ddd;
 }
 #article-list li:last-child {
-  margin-bottom: 0;
+  border-radius: 0 0 8px 8px;
 }
 
 #article-list a {
-  color: #333;
+  color: #141619;
   text-decoration: none;
 }
 
-#article-list a:hover {
-  text-decoration: underline;
+#article-list a .article-search-box {
+  padding: 0px 16px;
+  display: flex;
+  align-items: center;
+}
+#article-list a .article-search-box p {
+  font-size: 14px;
+  color: #141619;
 }/*# sourceMappingURL=styles.css.map */

@@ -85,7 +85,7 @@ include 'list_articles.php';
 
             if (!query) {
                 articleList.innerHTML = '';
-                articleList.style.opacity = 0;
+                articleList.style.display = 'none';
                 searchBar.classList.remove('expanded');
                 articleList.classList.remove('expanded-list');
                 return;
@@ -97,7 +97,7 @@ include 'list_articles.php';
             articleList.innerHTML = ''; // Limpia resultados previos
 
             if (articles.length > 0) {
-                articleList.style.opacity = 1;
+                articleList.style.display = 'block';
                 searchBar.classList.add('expanded');
                 articleList.classList.add('expanded-list');
 
@@ -105,14 +105,15 @@ include 'list_articles.php';
                     const listItem = document.createElement('li');
                     listItem.innerHTML = `
                 <a href="article.php?article=${article.filename}">
-                    <strong>${article.title}</strong><br>
-                    <span>${article.description}</span>
+                    <div class="article-search-box">
+                        <p>${article.title}</p><br>
+                    </div>
                 </a>
             `;
                     articleList.appendChild(listItem);
                 });
             } else {
-                articleList.style.opacity = 0;
+                articleList.style.display = 'none';
                 searchBar.classList.remove('expanded');
                 articleList.classList.remove('expanded-list');
             }

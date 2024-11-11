@@ -336,7 +336,7 @@ article {
     &:active,
     &:focus {
         outline: none;
-        box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+        box-shadow: rgba(12, 12, 46, 0.10) 0px 48px 100px 0px;
     }
 
     &.expanded {
@@ -354,14 +354,13 @@ article {
     border: 1px solid #C4C5C6;
     border-radius: 16px;
     box-sizing: border-box;
-    padding: 8px;
+    padding: 8px 0px;
     position: absolute;
     top: 48px;
     list-style: none;
     margin: 0;
     box-shadow: rgba(17, 12, 46, 0.05) 0px 48px 100px 0px;
-    opacity: 0;
-    transition: opacity 200ms ease;
+    display: none;
 
     &.expanded-list {
         top: 48px;
@@ -371,24 +370,31 @@ article {
 }
 
 #article-list li {
-    border-radius: 8px;
-    padding: 12px;
-    margin-bottom: 8px;
-    background-color: #F3F3F3;
-    border: 1px solid #ddd;
+    box-sizing: border-box;
+    background-color: #FFF;
+    cursor: pointer;
+
+    &:hover {
+        background-color: #F3F3F3;
+    }
 
     &:last-child {
-        margin-bottom: 0;
+        border-radius: 0 0 8px 8px;
     }
 }
 
 #article-list a {
-    color: #333;
+    color: #141619;
     text-decoration: none;
 }
 
-#article-list a:hover {
-    text-decoration: underline;
-}
+#article-list a .article-search-box {
+    padding: 0px 16px;
+    display: flex;
+    align-items: center;
 
-// Footer
+    p {
+        font-size: 14px;
+        color: #141619;
+    }
+}
