@@ -48,6 +48,11 @@ if (file_exists($filePath)) {
 </head>
 
 <body>
+<div id="nav-menu" class="nav-menu">
+        <a href="landing.php">Temas</a>
+        <a href="article.php?article=welcome">Recursos</a>
+        <a href="article.php?article=welcome">Nosotros</a>
+    </div>
     <nav>
         <div class="nav-search">
             <a class="m-0" href="landing.php">
@@ -67,6 +72,14 @@ if (file_exists($filePath)) {
             <a href="article.php?article=welcome">Recursos</a>
             <a href="article.php?article=welcome">Nosotros</a>
         </div>
+
+        <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48" onclick="this.classList.toggle('active')">
+            <path class="line top"
+                d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+            <path class="line middle" d="m 70,50 h -40" />
+            <path class="line bottom"
+                d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+        </svg>
     </nav>
     <div class="article-main">
         <div class="article-content">
@@ -169,6 +182,24 @@ if (file_exists($filePath)) {
                 articleList.classList.remove('expanded-list');
             }
         }
+
+        // Nav Menu Hamburger
+
+        document.getElementById('hamburger').addEventListener('click', function () {
+            console.log('click click clikcs!!');
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Hide nav-menu when resizing the window beyond 600px
+        window.addEventListener('resize', function () {
+            const navMenu = document.getElementById('nav-menu');
+            const hamburger = document.getElementById('hamburger');
+            if (window.innerWidth > 800) {
+                navMenu.style.display = 'none'; // Hide menu
+                hamburger.classList.remove('active'); // Reset hamburger icon
+            }
+        });
     </script>
 </body>
 </html>
