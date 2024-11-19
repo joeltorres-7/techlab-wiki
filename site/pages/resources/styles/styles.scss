@@ -121,7 +121,8 @@ body {
 // Nav and Footer
 
 .nav-menu {
-    display: none;
+    display: flex;
+    opacity: 0;
     flex-direction: column;
     align-items: center;
     justify-content: center;
@@ -132,6 +133,13 @@ body {
     background-color: rgba(255, 255, 255, 0.92);
     position: fixed;
     transition-duration: 400ms;
+    pointer-events: none;
+
+    &.show {
+        opacity: 1; /* Fully visible */
+        visibility: visible;
+        pointer-events: auto; /* Make interactable */
+    }
 
     a {
         text-decoration: none;
@@ -206,10 +214,22 @@ footer {
         height: 20px;
     }
 
+    .search-box {
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 4px;
+        box-sizing: border-box;
+    }
+
     .nav-search {
         width: 30vw;
         display: flex;
         align-items: center;
+
+        .nav-top {
+            z-index: 120;
+        }
 
         .search-container {
             width: 100%;
@@ -573,5 +593,17 @@ article {
 
     .ham {
         display: block;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    nav {
+        .search-box {
+            display: flex;
+        }
+
+        .nav-search .search-container {
+            display: none;
+        }
     }
 }

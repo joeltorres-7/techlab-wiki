@@ -25,8 +25,8 @@ include 'list_articles.php';
     </div>
     <nav>
         <div class="nav-search">
-            <a class="m-0" href="landing.php">
-                <img class="nav-logo" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
+            <a class="m-0 nav-top" href="landing.php">
+                <img class="nav-logo nav-landing" src="./resources/images/techlab-logo.svg" alt="Wiki Logo">
             </a>
             <div class="search-container">
                 <span class="material-symbols-rounded search-icon">search</span>
@@ -43,7 +43,11 @@ include 'list_articles.php';
             <a href="article.php?article=welcome">Nosotros</a>
         </div>
 
-        <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48" onclick="this.classList.toggle('active')">
+        <div id="nav-search-icon" class="search-box">
+            <span class="material-symbols-rounded">search</span>
+        </div>
+        <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48"
+            onclick="this.classList.toggle('active')">
             <path class="line top"
                 d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
             <path class="line middle" d="m 70,50 h -40" />
@@ -136,9 +140,8 @@ include 'list_articles.php';
         // Nav Menu Hamburger
 
         document.getElementById('hamburger').addEventListener('click', function () {
-            console.log('click click clikcs!!');
             const navMenu = document.getElementById('nav-menu');
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.classList.toggle('show');
         });
 
         // Hide nav-menu when resizing the window beyond 600px
@@ -146,7 +149,7 @@ include 'list_articles.php';
             const navMenu = document.getElementById('nav-menu');
             const hamburger = document.getElementById('hamburger');
             if (window.innerWidth > 800) {
-                navMenu.style.display = 'none'; // Hide menu
+                navMenu.classList.remove('show');
                 hamburger.classList.remove('active'); // Reset hamburger icon
             }
         });

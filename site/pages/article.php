@@ -48,7 +48,7 @@ if (file_exists($filePath)) {
 </head>
 
 <body>
-<div id="nav-menu" class="nav-menu">
+    <div id="nav-menu" class="nav-menu">
         <a href="landing.php">Temas</a>
         <a href="article.php?article=welcome">Recursos</a>
         <a href="article.php?article=welcome">Nosotros</a>
@@ -186,9 +186,8 @@ if (file_exists($filePath)) {
         // Nav Menu Hamburger
 
         document.getElementById('hamburger').addEventListener('click', function () {
-            console.log('click click clikcs!!');
             const navMenu = document.getElementById('nav-menu');
-            navMenu.style.display = navMenu.style.display === 'flex' ? 'none' : 'flex';
+            navMenu.classList.toggle('show');
         });
 
         // Hide nav-menu when resizing the window beyond 600px
@@ -196,7 +195,7 @@ if (file_exists($filePath)) {
             const navMenu = document.getElementById('nav-menu');
             const hamburger = document.getElementById('hamburger');
             if (window.innerWidth > 800) {
-                navMenu.style.display = 'none'; // Hide menu
+                navMenu.classList.remove('show');
                 hamburger.classList.remove('active'); // Reset hamburger icon
             }
         });

@@ -100,7 +100,8 @@ body {
 }
 
 .nav-menu {
-  display: none;
+  display: flex;
+  opacity: 0;
   flex-direction: column;
   align-items: center;
   justify-content: center;
@@ -111,6 +112,12 @@ body {
   background-color: rgba(255, 255, 255, 0.92);
   position: fixed;
   transition-duration: 400ms;
+  pointer-events: none;
+}
+.nav-menu.show {
+  opacity: 1; /* Fully visible */
+  visibility: visible;
+  pointer-events: auto; /* Make interactable */
 }
 .nav-menu a {
   text-decoration: none;
@@ -178,11 +185,23 @@ footer .nav-logo {
   z-index: 200;
   height: 20px;
 }
+nav .search-box,
+footer .search-box {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
+}
 nav .nav-search,
 footer .nav-search {
   width: 30vw;
   display: flex;
   align-items: center;
+}
+nav .nav-search .nav-top,
+footer .nav-search .nav-top {
+  z-index: 120;
 }
 nav .nav-search .search-container,
 footer .nav-search .search-container {
@@ -502,5 +521,13 @@ article {
   }
   .ham {
     display: block;
+  }
+}
+@media only screen and (max-width: 600px) {
+  nav .search-box {
+    display: flex;
+  }
+  nav .nav-search .search-container {
+    display: none;
   }
 }/*# sourceMappingURL=styles.css.map */
