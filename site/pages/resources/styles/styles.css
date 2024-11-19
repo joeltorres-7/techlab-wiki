@@ -496,6 +496,11 @@ article {
   margin-bottom: 1em;
 }
 
+@media only screen and (max-width: 1200px) {
+  .article-main .article-recommendations {
+    width: 30%;
+  }
+}
 @media only screen and (max-width: 1024px) {
   header,
   main {
@@ -513,6 +518,12 @@ article {
   }
 }
 @media only screen and (max-width: 800px) {
+  .article-main .article-recommendations {
+    display: none;
+  }
+  .article-main .article-content {
+    width: 100%;
+  }
   nav .nav-search {
     width: 60vw;
   }
