@@ -99,6 +99,79 @@ body {
   line-height: 20px;
 }
 
+.nav-menu {
+  display: flex;
+  opacity: 0;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  width: 100%;
+  height: 100%;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.92);
+  position: fixed;
+  transition-duration: 400ms;
+  pointer-events: none;
+}
+.nav-menu.show {
+  opacity: 1; /* Fully visible */
+  visibility: visible;
+  pointer-events: auto; /* Make interactable */
+}
+.nav-menu a {
+  text-decoration: none;
+  font-size: 32px;
+  color: #050315;
+  margin-bottom: 16px;
+}
+.nav-menu a:last-child {
+  margin-bottom: 0;
+}
+
+.ham {
+  display: none;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform 400ms;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  z-index: 120;
+}
+
+.hamRotate.active {
+  transform: rotate(45deg);
+}
+
+.hamRotate180.active {
+  transform: rotate(180deg);
+}
+
+.line {
+  fill: none;
+  transition: stroke-dasharray 400ms, stroke-dashoffset 400ms;
+  stroke: #000;
+  stroke-width: 5.5;
+  stroke-linecap: round;
+}
+
+.ham4 .top {
+  stroke-dasharray: 40 121;
+}
+
+.ham4 .bottom {
+  stroke-dasharray: 40 121;
+}
+
+.ham4.active .top {
+  stroke-dashoffset: -68px;
+}
+
+.ham4.active .bottom {
+  stroke-dashoffset: -68px;
+}
+
 nav,
 footer {
   flex: 1 0 100%;
@@ -107,15 +180,33 @@ footer {
   align-items: center;
   padding: 32px 48px;
 }
+nav .nav-actions,
+footer .nav-actions {
+  display: none;
+  align-items: center;
+}
 nav .nav-logo,
 footer .nav-logo {
+  z-index: 200;
   height: 20px;
+}
+nav .search-box,
+footer .search-box {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  box-sizing: border-box;
 }
 nav .nav-search,
 footer .nav-search {
   width: 30vw;
   display: flex;
   align-items: center;
+}
+nav .nav-search .nav-top,
+footer .nav-search .nav-top {
+  z-index: 120;
 }
 nav .nav-search .search-container,
 footer .nav-search .search-container {
@@ -383,7 +474,9 @@ article {
   max-width: 800px;
 }
 
-.markdown-content h1, .markdown-content h2, .markdown-content h3 {
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3 {
   color: #2c3e50;
   margin-top: 1.4em;
   margin-bottom: 0.5em;
@@ -402,7 +495,115 @@ article {
   text-decoration: underline;
 }
 
-.markdown-content ul, .markdown-content ol {
+.markdown-content ul,
+.markdown-content ol {
   padding-left: 1.5em;
   margin-bottom: 1em;
+}
+
+.missing-landing {
+  padding: 24px 0px 32px;
+}
+
+.missing-landing .container h1 {
+  font-size: 48px;
+  margin: 4px;
+}
+.missing-landing .container p {
+  font-size: 24px;
+  color: #68696B;
+  margin: 8px 0px 24px;
+}
+.missing-landing .container .picture {
+  width: 300px;
+}
+.missing-landing .container .back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 16px;
+  background-color: #050315;
+  color: #E5E5E5;
+  border-radius: 24px;
+}
+.missing-landing .container .back-button span {
+  margin-right: 4px;
+}
+.missing-landing .container .back-button p {
+  font-size: 14px;
+  color: #E5E5E5;
+  margin: 0;
+}
+
+@media only screen and (max-width: 1200px) {
+  .article-main .article-recommendations {
+    width: 30%;
+  }
+}
+@media only screen and (max-width: 1024px) {
+  header,
+  main {
+    width: 80vw;
+  }
+  nav .nav-search {
+    width: 40vw;
+  }
+  .articles-list {
+    margin-top: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 60vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  .article-main .article-recommendations {
+    display: none;
+  }
+  .article-main .article-content {
+    width: 100%;
+  }
+  nav .nav-actions {
+    display: flex;
+  }
+  nav .nav-search {
+    width: 60vw;
+  }
+  nav .nav-links {
+    display: none;
+  }
+  .ham {
+    display: block;
+  }
+}
+@media only screen and (max-width: 600px) {
+  header p {
+    font-size: 20px;
+    width: 100%;
+    margin-top: 0px;
+  }
+  nav, footer {
+    padding: 32px 24px;
+  }
+  nav .search-box {
+    display: flex;
+    margin-right: 16px;
+  }
+  nav .nav-search .search-container {
+    display: none;
+  }
+  nav .nav-search .nav-logo {
+    margin-left: 16px;
+  }
+  .articles-list {
+    width: 80vw;
+  }
+  footer .footer-logo {
+    flex-direction: column;
+    align-items: start;
+    margin-left: 16px;
+  }
+  footer .footer-logo .nav-logo {
+    margin-top: 16px;
+  }
 }/*# sourceMappingURL=styles.css.map */
