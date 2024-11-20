@@ -502,7 +502,12 @@ article {
 
 .missing-landing .container h1 {
   font-size: 48px;
-  margin: 8px;
+  margin: 4px;
+}
+.missing-landing .container p {
+  font-size: 24px;
+  color: #68696B;
+  margin: 8px 0px 24px;
 }
 .missing-landing .container .picture {
   width: 300px;

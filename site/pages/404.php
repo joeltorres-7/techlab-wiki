@@ -57,9 +57,9 @@
         <header class="container">
             <img class="picture" src="./resources/images/illustrations/missing.png" />
             <h1>
-                404
+                Oops!
             </h1>
-            <p>Oops! The page you're looking for doesn't exist.</p>
+            <p>Este articulo aún no ha sido escrito</p>
             <a class="back-button" href="landing.php">
                 <span class="material-symbols-rounded">arrow_back</span>
                 <p>Regresar</p>
