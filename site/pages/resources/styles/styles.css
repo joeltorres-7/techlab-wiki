@@ -577,6 +577,11 @@ article {
   }
 }
 @media only screen and (max-width: 600px) {
+  header p {
+    font-size: 20px;
+    width: 100%;
+    margin-top: 0px;
+  }
   nav, footer {
     padding: 32px 24px;
   }
@@ -589,6 +594,9 @@ article {
   }
   nav .nav-search .nav-logo {
     margin-left: 16px;
+  }
+  .articles-list {
+    width: 80vw;
   }
   footer .footer-logo {
     flex-direction: column;
