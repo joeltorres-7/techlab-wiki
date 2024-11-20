@@ -13,7 +13,7 @@ include 'list_articles.php';
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..400,0..1" />
     <link rel="stylesheet" href="./resources/styles/styles.css">
     <title>TechLab | Wiki</title>
 </head>
@@ -44,17 +44,19 @@ include 'list_articles.php';
             <a href="article.php?article=welcome">Nosotros</a>
         </div>
 
-        <div id="nav-search-icon" class="search-box">
-            <span class="material-symbols-rounded">search</span>
+        <div class="nav-actions">
+            <div id="nav-search-icon" class="search-box">
+                <span class="material-symbols-rounded">search</span>
+            </div>
+            <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48"
+                onclick="this.classList.toggle('active')">
+                <path class="line top"
+                    d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path class="line middle" d="m 70,50 h -40" />
+                <path class="line bottom"
+                    d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
         </div>
-        <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48"
-            onclick="this.classList.toggle('active')">
-            <path class="line top"
-                d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
-            <path class="line middle" d="m 70,50 h -40" />
-            <path class="line bottom"
-                d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
-        </svg>
     </nav>
     <div class="landing">
         <header>
