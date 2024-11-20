@@ -496,6 +496,35 @@ article {
   margin-bottom: 1em;
 }
 
+.missing-landing {
+  padding: 24px 0px 32px;
+}
+
+.missing-landing .container h1 {
+  font-size: 48px;
+  margin: 8px;
+}
+.missing-landing .container .picture {
+  width: 300px;
+}
+.missing-landing .container .back-button {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  padding: 10px 16px;
+  background-color: #050315;
+  color: #E5E5E5;
+  border-radius: 24px;
+}
+.missing-landing .container .back-button span {
+  margin-right: 4px;
+}
+.missing-landing .container .back-button p {
+  font-size: 14px;
+  color: #E5E5E5;
+  margin: 0;
+}
+
 @media only screen and (max-width: 1200px) {
   .article-main .article-recommendations {
     width: 30%;

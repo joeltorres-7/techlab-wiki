@@ -5,6 +5,11 @@ $parsedown = new Parsedown();
 $article = isset($_GET['article']) ? $_GET['article'] : 'welcome';
 $filePath = "articles/$article.md";
 
+if (!file_exists('articles/' . $article . '.md')) {
+    header('Location: 404.php');
+    exit();
+}
+
 // Default title if no metadata is found
 $customTitle = "Wiki Article";
 
