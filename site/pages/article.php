@@ -47,7 +47,7 @@ if (file_exists($filePath)) {
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..400,0..1" />
     <link rel="stylesheet" href="./resources/styles/styles.css">
     <title>TechLab - <?= htmlspecialchars($customTitle) ?></title>
 </head>
