@@ -2,21 +2,20 @@
 function getArticles()
 {
     $articles = [];
-    $files = glob('articles/*.md'); // Search for all .md files in the articles folder
+    $files = glob('articles/*.md'); // Buscar todos los archivos .md en la carpeta articles
 
     foreach ($files as $file) {
         $content = file_get_contents($file);
 
-        // Extract metadata block and remaining content
+        // Extraer bloque de metadatos y contenido restante
         if (preg_match('/^---(.*?)---\s*(.*)$/s', $content, $matches)) {
-            $metadata = $matches[1]; // Metadata block
-            $markdownContent = $matches[2]; // Remaining content after metadata
+            $metadata = $matches[1];
+            $markdownContent = $matches[2];
 
-            // Extract specific metadata fields
+            // Extraer campos de metadatos específicos
             $title = null;
             $description = null;
             $icon = null;
-            $videoUrl = null;
 
             if (preg_match('/^title:\s*(.+)$/m', $metadata, $titleMatch)) {
                 $title = $titleMatch[1];
@@ -27,20 +26,16 @@ function getArticles()
             if (preg_match('/^icon:\s*(.+)$/m', $metadata, $iconMatch)) {
                 $icon = $iconMatch[1];
             }
-            if (preg_match('/^video_url:\s*(.+)$/m', $metadata, $videoMatch)) {
-                $videoUrl = $videoMatch[1];
-            }
 
-            $filename = basename($file, ".md"); // File name without extension
+            $filename = basename($file, ".md");
 
-            // Add article to the list
+            // Agregar artículo a la lista
             $articles[] = [
                 'title' => $title,
                 'description' => $description,
                 'icon' => $icon,
-                'video_url' => $videoUrl, // Add the video_url field
                 'filename' => $filename,
-                'content' => $markdownContent // Optional: include the remaining content
+                'content' => $markdownContent // Opcional
             ];
         }
     }
@@ -48,6 +43,41 @@ function getArticles()
     return $articles;
 }
 
-// Generate the list of articles in HTML
+// Obtener lista de artículos
 $articles = getArticles();
+
+// Verificar si $article está definido
+$currentArticle = isset($_GET['article']) ? $_GET['article'] : null;
+
+// Filtrar artículos recomendados
+$filteredArticles = array_filter($articles, function ($article) use ($currentArticle) {
+    return $article['filename'] !== $currentArticle;
+});
+
+// Reorganizar los índices para evitar errores al hacer slicing
+$filteredArticles = array_values($filteredArticles);
+
+// Seleccionar hasta 3 artículos, sin duplicados
+$recommended = array_slice($filteredArticles, 0, 3);
+
+// Generar HTML de artículos recomendados
+$recommendedHtml = '';
+foreach ($recommended as $article) {
+    $icon = $article['icon'] ?: 'storage'; // Icono predeterminado
+    $title = htmlspecialchars($article['title']);
+    $description = htmlspecialchars($article['description']);
+    $filename = htmlspecialchars($article['filename']);
+
+    $recommendedHtml .= '
+        <a class="article-card" href="article.php?article=' . urlencode($filename) . '">
+            <div class="article-icon-box">
+                    <span class="material-symbols-rounded">' . $icon . '</span>
+                </div>
+                <div class="article-info">
+                    <h3>' . $title . '</h3>
+                    <p>' . $description . '</p>
+            </div>
+        </a>
+    ';
+}
 ?>

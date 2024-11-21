@@ -1,5 +1,6 @@
 <?php
 require '../lib/Parsedown.php';
+include 'list_articles.php';
 
 $parsedown = new Parsedown();
 $article = isset($_GET['article']) ? $_GET['article'] : 'welcome';
@@ -48,7 +49,7 @@ if (file_exists($filePath)) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./resources/images/icons/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="./resources/images/icons/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -133,33 +134,7 @@ if (file_exists($filePath)) {
         </div>
         <div class="article-recommendations">
             <p class="recommended-title">Articulos Recomendados</p>
-            <div class="article-card">
-                <div class="article-icon-box">
-                    <span class="material-symbols-rounded">storage</span>
-                </div>
-                <div class="article-info">
-                    <h3>Gestion de Memoria</h3>
-                    <p>Este es un breve resumen del tema a explicar en este articulo.</p>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-icon-box">
-                    <span class="material-symbols-rounded">storage</span>
-                </div>
-                <div class="article-info">
-                    <h3>Gestion de Memoria</h3>
-                    <p>Este es un breve resumen del tema a explicar en este articulo.</p>
-                </div>
-            </div>
-            <div class="article-card">
-                <div class="article-icon-box">
-                    <span class="material-symbols-rounded">storage</span>
-                </div>
-                <div class="article-info">
-                    <h3>Gestion de Memoria</h3>
-                    <p>Este es un breve resumen del tema a explicar en este articulo.</p>
-                </div>
-            </div>
+            <?= $recommendedHtml ?>
         </div>
     </div>
     <footer>

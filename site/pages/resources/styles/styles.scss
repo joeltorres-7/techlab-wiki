@@ -368,6 +368,7 @@ article {
     border-radius: 16px;
     margin-bottom: 16px;
     transition-duration: 300ms;
+    text-decoration: none;
 
     &:hover {
         background-color: #F3F3F3;
@@ -398,6 +399,7 @@ article {
     }
 
     h3 {
+        color: #050315;
         font-size: 16px;
         font-weight: 600;
         margin-bottom: 6px;
