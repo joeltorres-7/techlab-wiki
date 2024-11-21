@@ -37,21 +37,23 @@
 
         <div class="nav-links">
             <a href="landing.php">Temas</a>
-            <a href="404.php">Recursos</a>
+            <a href="article.php?article=welcome">Recursos</a>
             <a href="article.php?article=welcome">Nosotros</a>
         </div>
 
-        <div id="nav-search-icon" class="search-box">
-            <span class="material-symbols-rounded">search</span>
+        <div class="nav-actions">
+            <div id="nav-search-icon" class="search-box">
+                <span class="material-symbols-rounded">search</span>
+            </div>
+            <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48"
+                onclick="this.classList.toggle('active')">
+                <path class="line top"
+                    d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
+                <path class="line middle" d="m 70,50 h -40" />
+                <path class="line bottom"
+                    d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
+            </svg>
         </div>
-        <svg id="hamburger" class="ham hamRotate ham4" viewBox="0 0 100 100" width="48"
-            onclick="this.classList.toggle('active')">
-            <path class="line top"
-                d="m 70,33 h -40 c 0,0 -8.5,-0.149796 -8.5,8.5 0,8.649796 8.5,8.5 8.5,8.5 h 20 v -20" />
-            <path class="line middle" d="m 70,50 h -40" />
-            <path class="line bottom"
-                d="m 30,67 h 40 c 0,0 8.5,0.149796 8.5,-8.5 0,-8.649796 -8.5,-8.5 -8.5,-8.5 h -20 v 20" />
-        </svg>
     </nav>
     <div class="landing missing-landing">
         <header class="container">
@@ -89,4 +91,5 @@
         });
     </script>
 </body>
+
 </html>
