@@ -109,10 +109,10 @@ include 'list_articles.php';
                             <p>DISEÑADOR Y<br />DESARROLLADOR</p>
                         </div>
                         <div class="team-social">
-                            <a href="https://github.com/joeltorres-7">
+                            <a href="https://github.com/joeltorres-7" target="_blank">
                                 <img src="./resources/images/icons/github-icon.svg" />
                             </a>
-                            <a href="https://linkedin.com/in/joeltorres1/">
+                            <a href="https://linkedin.com/in/joeltorres1/" target="_blank">
                                 <img src="./resources/images/icons/linkedin-icon.svg" />
                             </a>
                         </div>
@@ -126,10 +126,10 @@ include 'list_articles.php';
                             <p>DESARROLLADOR</p>
                         </div>
                         <div class="team-social">
-                            <a href="#">
+                            <a href="#" target="_blank">
                                 <img src="./resources/images/icons/github-icon.svg" />
                             </a>
-                            <a href="#">
+                            <a href="#" target="_blank">
                                 <img src="./resources/images/icons/linkedin-icon.svg" />
                             </a>
                         </div>
@@ -143,10 +143,10 @@ include 'list_articles.php';
                             <p>COPYWRITER</p>
                         </div>
                         <div class="team-social">
-                            <a href="https://github.com/jsebm">
+                            <a href="https://github.com/jsebm" target="_blank">
                                 <img src="./resources/images/icons/github-icon.svg" />
                             </a>
-                            <a href="#">
+                            <a href="#" target="_blank">
                                 <img src="./resources/images/icons/linkedin-icon.svg" />
                             </a>
                         </div>
