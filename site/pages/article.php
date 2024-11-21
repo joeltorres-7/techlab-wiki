@@ -26,6 +26,13 @@ if (file_exists($filePath)) {
         if (preg_match('/^title:\s*(.+)$/m', $metadata, $titleMatch)) {
             $customTitle = $titleMatch[1];
         }
+
+        // Find video_url in metadata
+        if (preg_match('/^video_url:\s*(.+)$/m', $metadata, $videoMatch)) {
+            $videoUrl = $videoMatch[1];
+        } else {
+            $videoUrl = null; // No video URL in metadata
+        }
     }
 
     $htmlContent = $parsedown->text($markdownContent); // Convert Markdown to HTML
@@ -101,6 +108,16 @@ if (file_exists($filePath)) {
             </div>
 
             <article class="markdown-content">
+                <div class="video-container">
+                    <?php if (!empty($videoUrl)): ?>
+                        <iframe class="video-frame" width="560" height="315" src="<?= htmlspecialchars($videoUrl) ?>"
+                            title="YouTube video player" frameborder="0"
+                            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                    <?php else: ?>
+                        <p>Video no disponible.</p>
+                    <?php endif; ?>
+                </div>
                 <?= $htmlContent ?>
             </article>
             <div class="article-next-card">

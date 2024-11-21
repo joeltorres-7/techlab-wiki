@@ -2,6 +2,7 @@
 title: Sistemas RAID
 description: Como los sistemas operativos administran sus recursos.
 icon: devices
+video_url: https://www.youtube.com/embed/epG_s806g6g?si=I4tD3TWkfHjqOl0-
 ---
 
 # Gestión de Memoria
