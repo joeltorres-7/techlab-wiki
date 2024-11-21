@@ -566,6 +566,147 @@ article {
     margin-bottom: 1em;
 }
 
+// About Us
+
+.landing-about {
+    align-items: center;
+    padding: 24px 48px;
+    box-sizing: border-box;
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .tech-intro {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .image-intro {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-left: 32px;
+            width: 300px;
+            height: 300px;
+            animation-name: sphereRotate;
+            animation-duration: 12s;
+            animation-iteration-count: infinite;
+            animation-timing-function: linear;
+
+            @keyframes sphereRotate {
+                0% {
+                    transform: rotate(0deg);
+                }
+                100% {
+                    transform: rotate(360deg);
+                }
+            }
+        }
+
+        h1 {
+            font-size: 56px;
+            font-weight: 600;
+            text-align: start;
+            margin-bottom: 16px;
+        }
+
+        p {
+            width: 40vw;
+            font-size: 20px;
+            text-align: start;
+        }
+    }
+    
+    .our-team {
+        display: flex;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        margin-top: 48px;
+
+        .team-title {
+            font-size: 24px;
+            font-weight: 500;
+            text-align: center;
+            margin-bottom: 32px;
+        }
+
+        .team-members {
+            display: flex;
+        }
+
+        .team-card {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            border: 1px solid #E5E5E5;
+            box-sizing: border-box;
+            width: 25vw;
+            margin-right: 32px;
+            
+            &:last-child {
+                margin-right: 0;
+            }
+
+            img {
+                aspect-ratio: 1 / 1;
+                object-fit: cover;
+                width: 100%;
+            }
+        }
+
+        .team-info {
+            display: flex;
+            align-items: start;
+            justify-content: space-between;
+            padding: 24px;
+            width: 100%;
+            box-sizing: border-box;
+
+            .role {
+                margin-right: 16px;
+
+                h3 {
+                    color: #050315;
+                    font-size: 20px;
+                    font-weight: 500;
+                    margin-bottom: 8px;
+                    margin-top: 0px;
+                }
+
+                p {
+                    color: #68696B;
+                    font-size: 16px;
+                    font-weight: 400;
+                    margin: 0px;
+                }
+            }
+
+            .team-social {
+                display: flex;
+                align-items: center;
+
+                img {
+                    width: 28px;
+                }
+
+                a {
+                    text-decoration: none;
+                    margin-right: 12px;
+
+                    &:last-child {
+                        margin-right: 0;
+                    }
+                }
+            }
+        }
+    }
+}
+
 // 404 Page
 
 .missing-landing {
@@ -634,9 +775,48 @@ article {
         align-items: center;
         width: 60vw;
     }
+
+    .landing-about {
+        .our-team .team-card {
+            width: 30vw;
+
+            .team-info {
+                .role {
+                    margin-right: 16px;
+    
+                    h3 {
+                        font-size: 16px;
+                    }
+    
+                    p {
+                        font-size: 14px;
+                    }
+                }    
+
+                .team-social img {
+                    width: 24px;
+                }
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 800px) {
+    .landing-about {
+        .our-team .team-card {
+            margin-right: 16px;
+            width: 30vw;
+
+            .team-info {
+                flex-direction: column;
+
+                .team-social {
+                    margin-top: 16px;
+                }
+            }
+        }
+    }
+
     .article-main {
         .article-recommendations {
             display: none;
@@ -703,6 +883,44 @@ article {
 
         .nav-logo {
             margin-top: 16px;
+        }
+    }
+
+    // About Us
+
+    .landing-about {
+        padding: 24px 32px;
+
+        header {
+            flex-direction: column;
+            align-items: center;
+
+            .image-intro {
+                display: none;
+            }
+
+            h1 {
+                font-size: 32px;
+            }
+
+            p {
+                font-size: 18px;
+                font-weight: 400;
+                width: 80vw;
+            }
+        }
+
+        .our-team {
+            .team-members {
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .team-card {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 16px;
+            }
         }
     }
 }

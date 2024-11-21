@@ -501,6 +501,126 @@ article {
   margin-bottom: 1em;
 }
 
+.landing-about {
+  align-items: center;
+  padding: 24px 48px;
+  box-sizing: border-box;
+}
+.landing-about header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.landing-about header .tech-intro {
+  display: flex;
+  flex-direction: column;
+}
+.landing-about header .image-intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 32px;
+  width: 300px;
+  height: 300px;
+  animation-name: sphereRotate;
+  animation-duration: 12s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes sphereRotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.landing-about header h1 {
+  font-size: 56px;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 16px;
+}
+.landing-about header p {
+  width: 40vw;
+  font-size: 20px;
+  text-align: start;
+}
+.landing-about .our-team {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  margin-top: 48px;
+}
+.landing-about .our-team .team-title {
+  font-size: 24px;
+  font-weight: 500;
+  text-align: center;
+  margin-bottom: 32px;
+}
+.landing-about .our-team .team-members {
+  display: flex;
+}
+.landing-about .our-team .team-card {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  border: 1px solid #E5E5E5;
+  box-sizing: border-box;
+  width: 25vw;
+  margin-right: 32px;
+}
+.landing-about .our-team .team-card:last-child {
+  margin-right: 0;
+}
+.landing-about .our-team .team-card img {
+  aspect-ratio: 1/1;
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+}
+.landing-about .our-team .team-info {
+  display: flex;
+  align-items: start;
+  justify-content: space-between;
+  padding: 24px;
+  width: 100%;
+  box-sizing: border-box;
+}
+.landing-about .our-team .team-info .role {
+  margin-right: 16px;
+}
+.landing-about .our-team .team-info .role h3 {
+  color: #050315;
+  font-size: 20px;
+  font-weight: 500;
+  margin-bottom: 8px;
+  margin-top: 0px;
+}
+.landing-about .our-team .team-info .role p {
+  color: #68696B;
+  font-size: 16px;
+  font-weight: 400;
+  margin: 0px;
+}
+.landing-about .our-team .team-info .team-social {
+  display: flex;
+  align-items: center;
+}
+.landing-about .our-team .team-info .team-social img {
+  width: 28px;
+}
+.landing-about .our-team .team-info .team-social a {
+  text-decoration: none;
+  margin-right: 12px;
+}
+.landing-about .our-team .team-info .team-social a:last-child {
+  margin-right: 0;
+}
+
 .missing-landing {
   padding: 24px 0px 32px;
 }
@@ -555,8 +675,33 @@ article {
     align-items: center;
     width: 60vw;
   }
+  .landing-about .our-team .team-card {
+    width: 30vw;
+  }
+  .landing-about .our-team .team-card .team-info .role {
+    margin-right: 16px;
+  }
+  .landing-about .our-team .team-card .team-info .role h3 {
+    font-size: 16px;
+  }
+  .landing-about .our-team .team-card .team-info .role p {
+    font-size: 14px;
+  }
+  .landing-about .our-team .team-card .team-info .team-social img {
+    width: 24px;
+  }
 }
 @media only screen and (max-width: 800px) {
+  .landing-about .our-team .team-card {
+    margin-right: 16px;
+    width: 30vw;
+  }
+  .landing-about .our-team .team-card .team-info {
+    flex-direction: column;
+  }
+  .landing-about .our-team .team-card .team-info .team-social {
+    margin-top: 16px;
+  }
   .article-main .article-recommendations {
     display: none;
   }
@@ -605,5 +750,32 @@ article {
   }
   footer .footer-logo .nav-logo {
     margin-top: 16px;
+  }
+  .landing-about {
+    padding: 24px 32px;
+  }
+  .landing-about header {
+    flex-direction: column;
+    align-items: center;
+  }
+  .landing-about header .image-intro {
+    display: none;
+  }
+  .landing-about header h1 {
+    font-size: 32px;
+  }
+  .landing-about header p {
+    font-size: 18px;
+    font-weight: 400;
+    width: 80vw;
+  }
+  .landing-about .our-team .team-members {
+    flex-direction: column;
+    width: 100%;
+  }
+  .landing-about .our-team .team-card {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 16px;
   }
 }/*# sourceMappingURL=styles.css.map */

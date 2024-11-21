@@ -22,7 +22,7 @@ include 'list_articles.php';
     <div id="nav-menu" class="nav-menu">
         <a href="landing.php">Temas</a>
         <a href="article.php?article=welcome">Recursos</a>
-        <a href="article.php?article=welcome">Nosotros</a>
+        <a href="about.php">Nosotros</a>
     </div>
     <nav>
         <div class="nav-search">
@@ -41,7 +41,7 @@ include 'list_articles.php';
         <div class="nav-links">
             <a href="landing.php">Temas</a>
             <a href="article.php?article=welcome">Recursos</a>
-            <a href="article.php?article=welcome">Nosotros</a>
+            <a href="about.php">Nosotros</a>
         </div>
 
         <div class="nav-actions">
