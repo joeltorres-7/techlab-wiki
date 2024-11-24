@@ -62,6 +62,7 @@ body {
   border-radius: 16px;
   margin-bottom: 16px;
   transition-duration: 300ms;
+  text-decoration: none;
   cursor: pointer;
 }
 .article-next-card:hover {
@@ -91,6 +92,7 @@ body {
   font-size: 20px;
   font-weight: 600;
   margin-top: 4px;
+  color: #050315;
 }
 .article-next-card p {
   font-size: 16px;

@@ -80,4 +80,36 @@ foreach ($recommended as $article) {
         </a>
     ';
 }
+
+// Encontrar índice del artículo actual
+$currentIndex = -1;
+foreach ($articles as $index => $article) {
+    if ($article['filename'] === $currentArticle) {
+        $currentIndex = $index;
+        break;
+    }
+}
+
+// Determinar el siguiente artículo (si existe)
+$nextArticle = null;
+if ($currentIndex !== -1 && $currentIndex < count($articles) - 1) {
+    $nextArticle = $articles[$currentIndex + 1];
+}
+
+// Generar HTML para el botón del siguiente artículo
+$nextArticleHtml = '';
+if ($nextArticle) {
+    $nextFilename = htmlspecialchars($nextArticle['filename']);
+    $nextTitle = htmlspecialchars($nextArticle['title']);
+    $nextArticleHtml = '
+        <div class="next-article-card">
+            <a href="article.php?article=' . urlencode($nextFilename) . '" class="next-article-link">
+                <div class="card-content">
+                    <p class="next-article-text">Siguiente Artículo</p>
+                    <h3>' . $nextTitle . '</h3>
+                </div>
+            </a>
+        </div>
+    ';
+}
 ?>

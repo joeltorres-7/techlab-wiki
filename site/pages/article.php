@@ -112,8 +112,8 @@ if (file_exists($filePath)) {
             <article class="markdown-content">
                 <div class="video-container">
                     <?php if (!empty($videoUrl)): ?>
-                        <iframe class="video-frame" src="<?= htmlspecialchars($videoUrl) ?>"
-                            title="YouTube video player" frameborder="0"
+                        <iframe class="video-frame" src="<?= htmlspecialchars($videoUrl) ?>" title="YouTube video player"
+                            frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
                     <?php else: ?>
@@ -122,14 +122,18 @@ if (file_exists($filePath)) {
                 </div>
                 <?= $htmlContent ?>
             </article>
-            <div class="article-next-card">
-                <div>
-                    <p class="article-subtitle">Continua leyendo</p>
-                    <h3 class="article-title">Articulo 1</h3>
-                </div>
-                <div class="article-button">
-                    <span class="material-symbols-rounded">arrow_forward</span>
-                </div>
+            <div class="next-article-card">
+                <?php if ($nextArticle): ?>
+                    <a class="article-next-card" href="article.php?article=<?= urlencode($nextArticle['filename']) ?>" class="next-article-link">
+                        <div>
+                            <p class="article-subtitle">Continua leyendo</p>
+                            <h3 class="article-title"><?= htmlspecialchars($nextArticle['title']) ?></h3>
+                        </div>
+                        <div class="article-button">
+                            <span class="material-symbols-rounded">arrow_forward</span>
+                        </div>
+                    </a>
+                <?php endif; ?>
             </div>
         </div>
         <div class="article-recommendations">
