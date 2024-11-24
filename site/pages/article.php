@@ -112,7 +112,7 @@ if (file_exists($filePath)) {
             <article class="markdown-content">
                 <div class="video-container">
                     <?php if (!empty($videoUrl)): ?>
-                        <iframe class="video-frame" width="560" height="315" src="<?= htmlspecialchars($videoUrl) ?>"
+                        <iframe class="video-frame" src="<?= htmlspecialchars($videoUrl) ?>"
                             title="YouTube video player" frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                             referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>

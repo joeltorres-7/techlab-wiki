@@ -814,6 +814,16 @@ article {
     }
 }
 
+@media only screen and (max-width: 920px) {
+    .article-main .article-recommendations {
+        display: none;
+    }
+
+    .article-main .article-content {
+        width: 100%;
+    }
+}
+
 @media only screen and (max-width: 800px) {
     .landing-about {
         .our-team .team-card {
@@ -885,6 +895,15 @@ article {
         }
     }
 
+    .article-main {
+        margin: 0px 32px;
+    }
+
+    .markdown-content .video-container .video-frame {
+        width: 400px;
+        height: 230px;
+    }
+
     .articles-list {
         width: 80vw;
     }
@@ -935,5 +954,16 @@ article {
                 margin-bottom: 16px;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 450px) {
+    .article-main {
+        margin: 0px 32px;
+    }
+
+    .markdown-content .video-container .video-frame {
+        width: 300px;
+        height: 200px;
     }
 }

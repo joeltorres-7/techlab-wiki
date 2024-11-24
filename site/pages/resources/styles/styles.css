@@ -702,6 +702,14 @@ article {
     width: 24px;
   }
 }
+@media only screen and (max-width: 920px) {
+  .article-main .article-recommendations {
+    display: none;
+  }
+  .article-main .article-content {
+    width: 100%;
+  }
+}
 @media only screen and (max-width: 800px) {
   .landing-about .our-team .team-card {
     margin-right: 16px;
@@ -751,6 +759,13 @@ article {
   nav .nav-search .nav-logo {
     margin-left: 16px;
   }
+  .article-main {
+    margin: 0px 32px;
+  }
+  .markdown-content .video-container .video-frame {
+    width: 400px;
+    height: 230px;
+  }
   .articles-list {
     width: 80vw;
   }
@@ -788,5 +803,14 @@ article {
     width: 100%;
     margin-right: 0;
     margin-bottom: 16px;
+  }
+}
+@media only screen and (max-width: 450px) {
+  .article-main {
+    margin: 0px 32px;
+  }
+  .markdown-content .video-container .video-frame {
+    width: 300px;
+    height: 200px;
   }
 }/*# sourceMappingURL=styles.css.map */
