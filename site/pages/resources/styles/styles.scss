@@ -622,6 +622,14 @@ article {
     .resources-container {
         width: 100%;
 
+        .grid-section {
+            margin-bottom: 32px;
+
+            &:last-child {
+                margin-bottom: 0px;
+            }
+        }
+
         .grid-title {
             font-size: 18px;
         }
@@ -1036,6 +1044,24 @@ article {
                 margin-right: 0;
                 margin-bottom: 16px;
             }
+        }
+    }
+
+    // Resources
+
+    .landing-resources header {
+        flex-direction: column;
+
+        p {
+            width: 100%;
+        }
+
+        .tech-intro {
+            width: 100%;
+        }
+
+        .resources-image {
+            margin: 16px 0px;
         }
     }
 }

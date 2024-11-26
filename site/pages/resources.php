@@ -11,7 +11,7 @@ include 'list_articles.php';
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..600;1,14..32,100..600&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..400,0..1" />
@@ -124,89 +124,51 @@ include 'list_articles.php';
             <div class="grid-section">
                 <h2 class="grid-title">Libros</h2>
                 <div class="grid">
-                    <a class="resource-card" href="http://y2u.be/O5nskjZ_GoI" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
+                    <a class="resource-card"
+                        href="https://www.amazon.es/Ingenier%C3%ADa-software-en-Google-Oreilly/dp/8426734448/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=1TP07D0FEAVTK&dib=eyJ2IjoiMSJ9.mfUZvxyR8MVpI78pjlOS0I1zBPK5Fz_B83QofHkTmlIclXfo3UTgW94nEbPN-WWJXNyMz_5DF5vYzisoL5EuaChVPSJLzPrjbUu6T8-d4FOPtrSBRXcqCewBrIyEP34H0vNOMJes8yw1yCzgIISuFr6NvJcatIYPHZFG3PNqrL21LMG6Ww3ZjnZkpfUVS1DuHZ3NnNf8IOXWNk-iPlufMqYiLzmYF_uJ9HAFXjj24Eg.-43HcmDaMcP5J7NkHok41z5u3kNvqUeJAKdprCOcTXg&dib_tag=se&keywords=Ingenier%C3%ADa+de+Software+en+Google&nsdOptOutParam=true&qid=1732633546&s=books&sprefix=clean+code+a+handbook+of+agile+software+craftsmanship%2Cstripbooks%2C305&sr=1-1"
+                        target="_blank">
+                        <img src="./resources/images/icons/book-icon.svg" />
                         <div class="resource-info">
                             <div class="info">
-                                <h3>CrashCourse Computer Science</h3>
-                                <p>Serie en inglés sobre los conceptos básicos de computación, incluyendo sistemas
-                                    operativos.</p>
+                                <h3>Ingeniería de Software en Google</h3>
+                                <p>Un libro esencial para desarrolladores que desean escribir código limpio, legible y
+                                    mantenible.</p>
                             </div>
                             <span class="material-symbols-rounded">open_in_new</span>
                         </div>
                     </a>
-                    <a class="resource-card" href="https://www.youtube.com/@codigofacilito" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
+                    <a class="resource-card"
+                        href="https://www.amazon.es/Clean-Code-Handbook-Software-Craftsmanship/dp/0132350882/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&crid=15NVQIWY5SS8P&dib=eyJ2IjoiMSJ9.MeQLPU5r9G7JW-j-yQJD7O_vlz3U3Splg6JX-rXJgSmIhS8-2VgyAXI5ES5KWdZD03srUY_kRgjwmjv27Oct3CGfJXtu_2dqfyft89BZnqvm3th1I4IYfdVi0DXYAxux31sXQKfp9RC2mGKorAguYQ.7NcZ6hYmTtTCo8gOaIfZkY5F5lHIBuOK0ysCMNgvUYM&dib_tag=se&keywords=Clean+Code%3A+A+Handbook+of+Agile+Software+Craftsmanship&nsdOptOutParam=true&qid=1732633516&s=books&sprefix=designing+data-intensive+applications+-+martin+kleppmann%2Cstripbooks%2C331&sr=1-1"
+                        target="_blank">
+                        <img src="./resources/images/icons/book-icon.svg" />
                         <div class="resource-info">
                             <div class="info">
-                                <h3>CodigoFacilito</h3>
+                                <h3>Clean Code: A Handbook of Agile Software Craftsmanship</h3>
                                 <p>Videos en español sobre programación y fundamentos de computación.</p>
                             </div>
                             <span class="material-symbols-rounded">open_in_new</span>
                         </div>
                     </a>
-                    <a class="resource-card" href="https://www.youtube.com/@Computerphile" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
+                    <a class="resource-card" href="https://www.amazon.es/Operating-System-Concepts-9th-ed/dp/8126554274"
+                        target="_blank">
+                        <img src="./resources/images/icons/book-icon.svg" />
                         <div class="resource-info">
                             <div class="info">
-                                <h3>Computerphile</h3>
-                                <p>Videos sobre computación explicados de forma clara y visual.</p>
+                                <h3>Operating System Concepts (9th Edition)</h3>
+                                <p>Fundamentos de sistemas operativos: procesos, memoria, sistemas de archivos y
+                                    sincronización.</p>
                             </div>
                             <span class="material-symbols-rounded">open_in_new</span>
                         </div>
                     </a>
-                    <a class="resource-card" href="https://www.youtube.com/@FaztCode" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
+                    <a class="resource-card"
+                        href="https://www.amazon.es/Designing-Data-Intensive-Applications-Reliable-Maintainable/dp/1449373321/ref=sr_1_1?__mk_es_ES=%C3%85M%C3%85%C5%BD%C3%95%C3%91&dib=eyJ2IjoiMSJ9.bAjN2ieCm0Taliqph_KPH4dP5mPjl0ldw60ms2Ehjwr4hLKM-QJkeWE2sMrn1Bhb.7oxpN8kBQcr3olQV0O8gm_h7yDBftPMRNgG_7leQar0&dib_tag=se&keywords=Designing+Data-Intensive+Applications+-+Martin+Kleppmann&nsdOptOutParam=true&qid=1732633493&s=books&sr=1-1"
+                        target="_blank">
+                        <img src="./resources/images/icons/book-icon.svg" />
                         <div class="resource-info">
                             <div class="info">
-                                <h3>FaztCode</h3>
-                                <p>Tutoriales técnicos sobre Linux y herramientas relacionadas.</p>
-                            </div>
-                            <span class="material-symbols-rounded">open_in_new</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="grid-section">
-                <h2 class="grid-title">Herramientas Interactivas y Simuladores</h2>
-                <div class="grid">
-                    <a class="resource-card" href="http://y2u.be/O5nskjZ_GoI" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
-                        <div class="resource-info">
-                            <div class="info">
-                                <h3>CrashCourse Computer Science</h3>
-                                <p>Serie en inglés sobre los conceptos básicos de computación, incluyendo sistemas
-                                    operativos.</p>
-                            </div>
-                            <span class="material-symbols-rounded">open_in_new</span>
-                        </div>
-                    </a>
-                    <a class="resource-card" href="https://www.youtube.com/@codigofacilito" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
-                        <div class="resource-info">
-                            <div class="info">
-                                <h3>CodigoFacilito</h3>
-                                <p>Videos en español sobre programación y fundamentos de computación.</p>
-                            </div>
-                            <span class="material-symbols-rounded">open_in_new</span>
-                        </div>
-                    </a>
-                    <a class="resource-card" href="https://www.youtube.com/@Computerphile" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
-                        <div class="resource-info">
-                            <div class="info">
-                                <h3>Computerphile</h3>
-                                <p>Videos sobre computación explicados de forma clara y visual.</p>
-                            </div>
-                            <span class="material-symbols-rounded">open_in_new</span>
-                        </div>
-                    </a>
-                    <a class="resource-card" href="https://www.youtube.com/@FaztCode" target="_blank">
-                        <img src="./resources/images/icons/youtube-icon.svg" />
-                        <div class="resource-info">
-                            <div class="info">
-                                <h3>FaztCode</h3>
-                                <p>Tutoriales técnicos sobre Linux y herramientas relacionadas.</p>
+                                <h3>Designing Data-Intensive Applications</h3>
+                                <p>Guía para construir sistemas fiables y escalables con grandes volúmenes de datos.</p>
                             </div>
                             <span class="material-symbols-rounded">open_in_new</span>
                         </div>

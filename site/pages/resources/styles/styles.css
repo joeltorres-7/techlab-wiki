@@ -548,6 +548,12 @@ article {
 .landing-resources .resources-container {
   width: 100%;
 }
+.landing-resources .resources-container .grid-section {
+  margin-bottom: 32px;
+}
+.landing-resources .resources-container .grid-section:last-child {
+  margin-bottom: 0px;
+}
 .landing-resources .resources-container .grid-title {
   font-size: 18px;
 }
@@ -870,6 +876,18 @@ article {
     width: 100%;
     margin-right: 0;
     margin-bottom: 16px;
+  }
+  .landing-resources header {
+    flex-direction: column;
+  }
+  .landing-resources header p {
+    width: 100%;
+  }
+  .landing-resources header .tech-intro {
+    width: 100%;
+  }
+  .landing-resources header .resources-image {
+    margin: 16px 0px;
   }
 }
 @media only screen and (max-width: 450px) {
