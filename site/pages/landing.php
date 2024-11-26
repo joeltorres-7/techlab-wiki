@@ -16,13 +16,13 @@ include 'list_articles.php';
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..400,0..1" />
     <link rel="stylesheet" href="./resources/styles/styles.css">
-    <title>TechLab | Wiki</title>
+    <title>TechLab | Home</title>
 </head>
 
 <body>
     <div id="nav-menu" class="nav-menu">
         <a href="landing.php">Temas</a>
-        <a href="article.php?article=welcome">Recursos</a>
+        <a href="resources.php">Recursos</a>
         <a href="about.php">Nosotros</a>
     </div>
     <nav>
@@ -41,7 +41,7 @@ include 'list_articles.php';
 
         <div class="nav-links">
             <a href="landing.php">Temas</a>
-            <a href="article.php?article=welcome">Recursos</a>
+            <a href="resources.php">Recursos</a>
             <a href="about.php">Nosotros</a>
         </div>
 

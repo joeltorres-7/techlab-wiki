@@ -19,7 +19,7 @@
 <body>
     <div id="nav-menu" class="nav-menu">
         <a href="landing.php">Temas</a>
-        <a href="article.php?article=welcome">Recursos</a>
+        <a href="resources.php">Recursos</a>
         <a href="about.php">Nosotros</a>
     </div>
     <nav>
@@ -38,7 +38,7 @@
 
         <div class="nav-links">
             <a href="landing.php">Temas</a>
-            <a href="article.php?article=welcome">Recursos</a>
+            <a href="resources.php">Recursos</a>
             <a href="about.php">Nosotros</a>
         </div>
 
@@ -58,7 +58,7 @@
     </nav>
     <div class="landing missing-landing">
         <header class="container">
-            <img class="picture" src="./resources/images/illustrations/missing.png" />
+            <img class="picture" src="./resources/images/illustrations/build.png" />
             <h1>
                 Oops!
             </h1>

@@ -581,12 +581,17 @@ article {
     margin-bottom: 1em;
 }
 
-// About Us
+// Resources
 
-.landing-about {
+.landing-resources {
     align-items: center;
     padding: 24px 48px;
     box-sizing: border-box;
+
+    .resources-image img {
+        width: 300px;
+        aspect-ratio: 1 / 1;
+    }    
 
     header {
         display: flex;
@@ -599,27 +604,103 @@ article {
             display: flex;
             flex-direction: column;
         }
-        
-        .image-intro {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            margin-left: 32px;
-            width: 300px;
-            height: 300px;
-            animation-name: sphereRotate;
-            animation-duration: 12s;
-            animation-iteration-count: infinite;
-            animation-timing-function: linear;
 
-            @keyframes sphereRotate {
-                0% {
-                    transform: rotate(0deg);
-                }
-                100% {
-                    transform: rotate(360deg);
-                }
+        h1 {
+            font-size: 48px;
+            font-weight: 600;
+            text-align: start;
+            margin-bottom: 8px;
+        }
+
+        p {
+            width: 40vw;
+            font-size: 18px;
+            text-align: start;
+        }
+    }
+
+    .resources-container {
+        width: 100%;
+
+        .grid-title {
+            font-size: 18px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 16px;
+            margin-top: 24px;
+        }
+
+        .resource-card {
+            border: 1px solid #E5E5E5;
+            border-radius: 16px;
+            padding: 20px 24px;
+            display: flex;
+            align-items: flex-start;        
+            text-decoration: none;
+            transition-duration: 300ms;
+
+            &:hover {
+                background-color: #F3F3F3;
             }
+
+            img {
+                margin-right: 16px;
+                padding: 0px 4px;
+                width: 32px;
+                height: 32px;
+            }
+
+            span {
+                color: #050315;
+                margin-left: 8px;
+            }
+
+            .resource-info {
+                display: flex;
+                align-items: start;
+            }
+
+            .info h3 {
+                font-size: 18px;
+                margin-top: 0px;
+                margin-bottom: 8px;
+                color: #050315;
+            }
+
+            .info p {
+                font-size: 16px;
+                margin: 0px;
+                color: #68696B;
+            }
+        }
+    }
+}
+
+// About Us
+
+.landing-about {
+    align-items: center;
+    padding: 24px 48px;
+    box-sizing: border-box;
+
+    .team-image img {
+        width: 400px;
+        aspect-ratio: 1 / 1;
+    }    
+
+    header {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 100%;
+        align-items: center;
+
+        .tech-intro {
+            display: flex;
+            flex-direction: column;
         }
 
         h1 {

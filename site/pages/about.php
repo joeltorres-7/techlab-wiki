@@ -16,13 +16,13 @@ include 'list_articles.php';
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:wght,FILL@100..400,0..1" />
     <link rel="stylesheet" href="./resources/styles/styles.css">
-    <title>TechLab | Wiki</title>
+    <title>TechLab | Nosotros</title>
 </head>
 
 <body>
     <div id="nav-menu" class="nav-menu">
         <a href="landing.php">Temas</a>
-        <a href="article.php?article=welcome">Recursos</a>
+        <a href="resources.php">Recursos</a>
         <a href="about.php">Nosotros</a>
     </div>
     <nav>
@@ -41,7 +41,7 @@ include 'list_articles.php';
 
         <div class="nav-links">
             <a href="landing.php">Temas</a>
-            <a href="article.php?article=welcome">Recursos</a>
+            <a href="resources.php">Recursos</a>
             <a href="about.php">Nosotros</a>
         </div>
 
@@ -75,28 +75,8 @@ include 'list_articles.php';
                     oportunidad de contar una historia y dejar una marca en el mundo.
                 </p>
             </div>
-            <div class="image-intro">
-                <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <g clip-path="url(#clip0_2_101)">
-                        <g opacity="0.5" filter="url(#filter0_f_2_101)">
-                            <path d="M128.6 0H0V322.2L106.2 134.75L128.6 0Z" fill="#FF00B8" />
-                            <path d="M0 322.2V400H240H320L106.2 134.75L0 322.2Z" fill="#FFB800" />
-                            <path d="M320 400H400V78.75L106.2 134.75L320 400Z" fill="#C8F1B5" />
-                            <path d="M400 0H128.6L106.2 134.75L400 78.75V0Z" fill="#0037FF" />
-                        </g>
-                    </g>
-                    <defs>
-                        <filter id="filter0_f_2_101" x="-159.933" y="-159.933" width="719.867" height="719.867"
-                            filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-                            <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                            <feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape" />
-                            <feGaussianBlur stdDeviation="79.9667" result="effect1_foregroundBlur_2_101" />
-                        </filter>
-                        <clipPath id="clip0_2_101">
-                            <rect width="400" height="400" rx="200" fill="white" />
-                        </clipPath>
-                    </defs>
-                </svg>
+            <div class="team-image">
+                <img src="./resources/images/illustrations/creative.png" />
             </div>
         </header>
         <div class="our-team">
@@ -120,7 +100,7 @@ include 'list_articles.php';
                     </div>
                 </div>
                 <div class="team-card">
-                    <img src="./resources/images/pictures/empty-picture.jpg" alt="Empty profile picture">
+                    <img src="./resources/images/pictures/fernando-picture.jpg" alt="Empty profile picture">
                     <div class="team-info">
                         <div class="role">
                             <h3>FERNANDO RODRIGUEZ</h3>

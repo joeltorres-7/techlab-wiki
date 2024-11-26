@@ -514,10 +514,95 @@ article {
   margin-bottom: 1em;
 }
 
+.landing-resources {
+  align-items: center;
+  padding: 24px 48px;
+  box-sizing: border-box;
+}
+.landing-resources .resources-image img {
+  width: 300px;
+  aspect-ratio: 1/1;
+}
+.landing-resources header {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  align-items: center;
+}
+.landing-resources header .tech-intro {
+  display: flex;
+  flex-direction: column;
+}
+.landing-resources header h1 {
+  font-size: 48px;
+  font-weight: 600;
+  text-align: start;
+  margin-bottom: 8px;
+}
+.landing-resources header p {
+  width: 40vw;
+  font-size: 18px;
+  text-align: start;
+}
+.landing-resources .resources-container {
+  width: 100%;
+}
+.landing-resources .resources-container .grid-title {
+  font-size: 18px;
+}
+.landing-resources .resources-container .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 16px;
+  margin-top: 24px;
+}
+.landing-resources .resources-container .resource-card {
+  border: 1px solid #E5E5E5;
+  border-radius: 16px;
+  padding: 20px 24px;
+  display: flex;
+  align-items: flex-start;
+  text-decoration: none;
+  transition-duration: 300ms;
+}
+.landing-resources .resources-container .resource-card:hover {
+  background-color: #F3F3F3;
+}
+.landing-resources .resources-container .resource-card img {
+  margin-right: 16px;
+  padding: 0px 4px;
+  width: 32px;
+  height: 32px;
+}
+.landing-resources .resources-container .resource-card span {
+  color: #050315;
+  margin-left: 8px;
+}
+.landing-resources .resources-container .resource-card .resource-info {
+  display: flex;
+  align-items: start;
+}
+.landing-resources .resources-container .resource-card .info h3 {
+  font-size: 18px;
+  margin-top: 0px;
+  margin-bottom: 8px;
+  color: #050315;
+}
+.landing-resources .resources-container .resource-card .info p {
+  font-size: 16px;
+  margin: 0px;
+  color: #68696B;
+}
+
 .landing-about {
   align-items: center;
   padding: 24px 48px;
   box-sizing: border-box;
+}
+.landing-about .team-image img {
+  width: 400px;
+  aspect-ratio: 1/1;
 }
 .landing-about header {
   display: flex;
@@ -529,26 +614,6 @@ article {
 .landing-about header .tech-intro {
   display: flex;
   flex-direction: column;
-}
-.landing-about header .image-intro {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin-left: 32px;
-  width: 300px;
-  height: 300px;
-  animation-name: sphereRotate;
-  animation-duration: 12s;
-  animation-iteration-count: infinite;
-  animation-timing-function: linear;
-}
-@keyframes sphereRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 .landing-about header h1 {
   font-size: 56px;

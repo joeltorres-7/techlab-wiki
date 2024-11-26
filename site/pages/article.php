@@ -64,7 +64,7 @@ if (file_exists($filePath)) {
 <body>
     <div id="nav-menu" class="nav-menu">
         <a href="landing.php">Temas</a>
-        <a href="article.php?article=welcome">Recursos</a>
+        <a href="resources.php">Recursos</a>
         <a href="about.php">Nosotros</a>
     </div>
     <nav>
@@ -83,7 +83,7 @@ if (file_exists($filePath)) {
 
         <div class="nav-links">
             <a href="landing.php">Temas</a>
-            <a href="article.php?article=welcome">Recursos</a>
+            <a href="resources.php">Recursos</a>
             <a href="about.php">Nosotros</a>
         </div>
 
