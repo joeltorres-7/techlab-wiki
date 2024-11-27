@@ -1,27 +1,41 @@
 <?php
-function getArticles() {
+function getArticles()
+{
     $articles = [];
-    $files = glob('articles/*.md'); // Busca todos los archivos .md en la carpeta de articles
+    $files = glob('articles/*.md'); // Buscar todos los archivos .md en la carpeta articles
 
     foreach ($files as $file) {
         $content = file_get_contents($file);
 
-        // Extrae el título, descripción e icono usando expresiones regulares
-        if (preg_match('/^title:\s*(.+)$/m', $content, $titleMatch) &&
-            preg_match('/^description:\s*(.+)$/m', $content, $descMatch) &&
-            preg_match('/^icon:\s*(.+)$/m', $content, $iconMatch)) {
-            
-            $title = $titleMatch[1];
-            $description = $descMatch[1];
-            $icon = $iconMatch[1];
-            $filename = basename($file, ".md"); // Nombre del archivo sin la extensión
+        // Extraer bloque de metadatos y contenido restante
+        if (preg_match('/^---(.*?)---\s*(.*)$/s', $content, $matches)) {
+            $metadata = $matches[1];
+            $markdownContent = $matches[2];
 
-            // Guarda la información en un arreglo
+            // Extraer campos de metadatos específicos
+            $title = null;
+            $description = null;
+            $icon = null;
+
+            if (preg_match('/^title:\s*(.+)$/m', $metadata, $titleMatch)) {
+                $title = $titleMatch[1];
+            }
+            if (preg_match('/^description:\s*(.+)$/m', $metadata, $descMatch)) {
+                $description = $descMatch[1];
+            }
+            if (preg_match('/^icon:\s*(.+)$/m', $metadata, $iconMatch)) {
+                $icon = $iconMatch[1];
+            }
+
+            $filename = basename($file, ".md");
+
+            // Agregar artículo a la lista
             $articles[] = [
                 'title' => $title,
                 'description' => $description,
                 'icon' => $icon,
-                'filename' => $filename
+                'filename' => $filename,
+                'content' => $markdownContent // Opcional
             ];
         }
     }
@@ -29,6 +43,73 @@ function getArticles() {
     return $articles;
 }
 
-// Genera la lista de artículos en HTML
+// Obtener lista de artículos
 $articles = getArticles();
+
+// Verificar si $article está definido
+$currentArticle = isset($_GET['article']) ? $_GET['article'] : null;
+
+// Filtrar artículos recomendados
+$filteredArticles = array_filter($articles, function ($article) use ($currentArticle) {
+    return $article['filename'] !== $currentArticle;
+});
+
+// Reorganizar los índices para evitar errores al hacer slicing
+$filteredArticles = array_values($filteredArticles);
+
+// Seleccionar hasta 3 artículos, sin duplicados
+$recommended = array_slice($filteredArticles, 0, 3);
+
+// Generar HTML de artículos recomendados
+$recommendedHtml = '';
+foreach ($recommended as $article) {
+    $icon = $article['icon'] ?: 'storage'; // Icono predeterminado
+    $title = htmlspecialchars($article['title']);
+    $description = htmlspecialchars($article['description']);
+    $filename = htmlspecialchars($article['filename']);
+
+    $recommendedHtml .= '
+        <a class="article-card" href="article.php?article=' . urlencode($filename) . '">
+            <div class="article-icon-box">
+                    <span class="material-symbols-rounded">' . $icon . '</span>
+                </div>
+                <div class="article-info">
+                    <h3>' . $title . '</h3>
+                    <p>' . $description . '</p>
+            </div>
+        </a>
+    ';
+}
+
+// Encontrar índice del artículo actual
+$currentIndex = -1;
+foreach ($articles as $index => $article) {
+    if ($article['filename'] === $currentArticle) {
+        $currentIndex = $index;
+        break;
+    }
+}
+
+// Determinar el siguiente artículo (si existe)
+$nextArticle = null;
+if ($currentIndex !== -1 && $currentIndex < count($articles) - 1) {
+    $nextArticle = $articles[$currentIndex + 1];
+}
+
+// Generar HTML para el botón del siguiente artículo
+$nextArticleHtml = '';
+if ($nextArticle) {
+    $nextFilename = htmlspecialchars($nextArticle['filename']);
+    $nextTitle = htmlspecialchars($nextArticle['title']);
+    $nextArticleHtml = '
+        <div class="next-article-card">
+            <a href="article.php?article=' . urlencode($nextFilename) . '" class="next-article-link">
+                <div class="card-content">
+                    <p class="next-article-text">Siguiente Artículo</p>
+                    <h3>' . $nextTitle . '</h3>
+                </div>
+            </a>
+        </div>
+    ';
+}
 ?>

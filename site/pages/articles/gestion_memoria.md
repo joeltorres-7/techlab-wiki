@@ -2,6 +2,7 @@
 title: Gestión de Memoria
 description: Conoce acerca del proceso de gestión de memoria en sistemas operativos.
 icon: storage
+video_url: https://www.youtube.com/embed/et5SCRxqMjM?si=-Wj3HinZHwooqWhd
 ---
 
 # Gestión de Memoria
