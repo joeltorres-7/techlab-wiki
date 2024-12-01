@@ -111,11 +111,13 @@ if (file_exists($filePath)) {
 
             <article class="markdown-content">
                 <div class="video-container">
+                    <div class="video-skeleton"></div> <!-- Skeleton placeholder -->
                     <?php if (!empty($videoUrl)): ?>
                         <iframe class="video-frame" src="<?= htmlspecialchars($videoUrl) ?>" title="YouTube video player"
                             frameborder="0"
                             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen
+                            onload="hideSkeleton()"></iframe>
                     <?php else: ?>
                         <p>Video no disponible.</p>
                     <?php endif; ?>
@@ -124,7 +126,8 @@ if (file_exists($filePath)) {
             </article>
             <div class="next-article-card">
                 <?php if ($nextArticle): ?>
-                    <a class="article-next-card" href="article.php?article=<?= urlencode($nextArticle['filename']) ?>" class="next-article-link">
+                    <a class="article-next-card" href="article.php?article=<?= urlencode($nextArticle['filename']) ?>"
+                        class="next-article-link">
                         <div>
                             <p class="article-subtitle">Continua leyendo</p>
                             <h3 class="article-title"><?= htmlspecialchars($nextArticle['title']) ?></h3>
@@ -204,9 +207,20 @@ if (file_exists($filePath)) {
             const hamburger = document.getElementById('hamburger');
             if (window.innerWidth > 800) {
                 navMenu.classList.remove('show');
-                hamburger.classList.remove('active'); // Reset hamburger icon
+                hamburger.classList.remove('active');
             }
         });
+
+        function hideSkeleton() {
+            const skeleton = document.querySelector('.video-skeleton');
+            const video = document.querySelector('.video-frame');
+            if (skeleton) {
+                skeleton.style.display = 'none';
+            }
+            if (video) {
+                video.style.display = 'block';
+            }
+        }
     </script>
 </body>
 
