@@ -7,7 +7,7 @@ include 'list_articles.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="./resources/images/icons/favicon.ico" type="image/x-icon"/>
+    <link rel="icon" href="./resources/images/icons/favicon.ico" type="image/x-icon" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
@@ -79,6 +79,17 @@ include 'list_articles.php';
                 <img src="./resources/images/illustrations/creative.png" />
             </div>
         </header>
+        <div class="our-project">
+            <h2 class="project-title">Nuestro proyecto</h2>
+            <div class="video-container">
+                <div class="video-skeleton"></div>
+                <iframe class="video-frame" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=AeC1oj8osmfPm03_" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen onload="hideSkeleton()">
+                </iframe>
+            </div>
+        </div>
         <div class="our-team">
             <h2 class="team-title">Nuestro equipo</h2>
             <div class="team-members">
@@ -157,6 +168,16 @@ include 'list_articles.php';
                 hamburger.classList.remove('active'); // Reset hamburger icon
             }
         });
+        function hideSkeleton() {
+            const skeleton = document.querySelector('.video-skeleton');
+            const video = document.querySelector('.video-frame');
+            if (skeleton) {
+                skeleton.style.display = 'none';
+            }
+            if (video) {
+                video.style.display = 'block';
+            }
+        }
     </script>
 </body>
 
