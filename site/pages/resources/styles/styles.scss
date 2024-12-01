@@ -552,6 +552,32 @@ article {
             border-radius: 8px;
         }
     }
+
+    .video-container {
+        overflow: hidden;
+    }
+    
+    .video-frame {
+        display: none; /* Initially hidden */
+    }
+    
+    .video-skeleton {
+        border-radius: 8px;
+        width: 560px;
+        height: 315px;
+        background: linear-gradient(90deg, #e0e0e0 25%, #f0f0f0 50%, #e0e0e0 75%);
+        background-size: 200% 100%;
+        animation: skeleton-loading 1.5s infinite;
+    }
+    
+    @keyframes skeleton-loading {
+        0% {
+            background-position: 200% 0;
+        }
+        100% {
+            background-position: -200% 0;
+        }
+    }
 }
 
 .markdown-content h1,
@@ -988,6 +1014,11 @@ article {
 
     .article-main {
         margin: 0px 32px;
+    }
+
+    .markdown-content .video-container .video-skeleton {
+        width: 400px;
+        height: 230px;
     }
 
     .markdown-content .video-container .video-frame {
