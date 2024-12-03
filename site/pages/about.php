@@ -83,7 +83,7 @@ include 'list_articles.php';
             <h2 class="project-title">Nuestro proyecto</h2>
             <div class="video-container">
                 <div class="video-skeleton"></div>
-                <iframe class="video-frame" src="https://www.youtube.com/embed/dQw4w9WgXcQ?si=AeC1oj8osmfPm03_" title="YouTube video player"
+                <iframe class="video-frame" src="https://www.youtube.com/embed/jOymqpSMfMY?si=3YOBRyHn-Vqpnz4m" title="YouTube video player"
                     frameborder="0"
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen onload="hideSkeleton()">
